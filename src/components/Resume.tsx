@@ -80,10 +80,14 @@ const Resume = () => {
         </div>
         
         <div className="flex justify-center mb-8 animate-slide-up">
-          <Button size="lg" className="flex items-center gap-2">
+          <a
+            href="/mohamed_osama_resume.pdf"
+            download
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+          >
             <Download className="h-4 w-4" />
             Download Resume (PDF)
-          </Button>
+          </a>
         </div>
         
         <Tabs defaultValue="experience" className="w-full animate-slide-up">
