@@ -18,8 +18,9 @@ const Hero = () => {
               Data Scientist & AI Engineer
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
-              Transforming complex data into actionable insights and building 
-              intelligent solutions for real-world problems.
+              A passionate and results-driven professional with expertise in machine learning, 
+              AI, and data analysis. Currently pursuing a Bachelor's degree in Computer Science 
+              at Nile University.
             </p>
             <div className="flex space-x-4">
               <Button asChild size="lg">
@@ -34,7 +35,7 @@ const Hero = () => {
             <div className="w-64 h-64 md:w-80 md:h-80 relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-primary/5 rounded-full"></div>
               <img 
-                src="/placeholder.svg"
+                src="/lovable-uploads/98c8f288-1970-47e8-a342-32cecc38e7d8.png"
                 alt="Mohamed Osama" 
                 className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
               />

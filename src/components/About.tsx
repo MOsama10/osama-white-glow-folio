@@ -4,17 +4,19 @@ import { Card, CardContent } from '@/components/ui/card';
 import { User } from 'lucide-react';
 
 const About = () => {
-  const skills = [
-    "Machine Learning", 
-    "Deep Learning",
-    "Natural Language Processing",
-    "Python", 
-    "TensorFlow/PyTorch", 
-    "Data Analysis",
-    "Big Data Processing", 
-    "Neural Networks", 
-    "Computer Vision",
-    "Statistical Modeling"
+  const technicalSkills = [
+    "Python", "C/C++", "Java", "SQL", "CUDA", "PyTorch", 
+    "TensorFlow", "Keras", "Scikit-learn", "GANs"
+  ];
+
+  const advancedSkills = [
+    "LLMs", "Retrieval-Augmented Generation (RAG)", "NLP", 
+    "Computer Vision", "Machine Learning", "Deep Learning"
+  ];
+
+  const softSkills = [
+    "Presentation", "Team Management", "Project Management", 
+    "Communication", "Problem Solving", "Research"
   ];
 
   return (
@@ -25,32 +27,80 @@ const About = () => {
           <h2 className="section-title">About Me</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-start">
           <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-2xl font-heading font-medium mb-4">Who I Am</h3>
             <p className="text-gray-700 mb-4">
-              I am a passionate Data Scientist and AI Engineer with extensive experience
-              in developing machine learning models and AI solutions that drive business value.
+              A passionate and results-driven Data Scientist and AI Engineer with a strong foundation 
+              in machine learning, AI, and data analysis. Currently pursuing a Bachelor's degree in 
+              Computer Science and Artificial Intelligence at Nile University.
             </p>
             <p className="text-gray-700 mb-4">
-              My journey in the field of artificial intelligence began with a fascination
-              for how data can be leveraged to solve complex problems and make intelligent
-              predictions. Since then, I've worked on various projects ranging from natural
-              language processing to computer vision applications.
+              Experienced in working with large language models (LLMs), computer vision, and natural 
+              language processing (NLP) techniques. Adept at leading technical teams, managing projects, 
+              and deploying AI solutions in production environments.
             </p>
             <p className="text-gray-700">
-              I'm constantly learning and experimenting with new technologies
-              to stay at the forefront of the rapidly evolving field of AI.
+              Known for a strong problem-solving ability, collaboration skills, and commitment to 
+              continuous learning in cutting-edge technologies.
             </p>
+            
+            <div className="mt-8">
+              <h3 className="text-2xl font-heading font-medium mb-4">Contact Information</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li><span className="font-medium">Email:</span> m.osaammaa@gmail.com</li>
+                <li><span className="font-medium">Phone:</span> +20 1098408989</li>
+                <li><span className="font-medium">Location:</span> Giza, Egypt</li>
+                <li><span className="font-medium">GitHub:</span> <a href="https://github.com/MOsama10" target="_blank" className="text-primary hover:underline">github.com/MOsama10</a></li>
+                <li><span className="font-medium">LinkedIn:</span> <a href="https://linkedin.com/in/-mohamedosama" target="_blank" className="text-primary hover:underline">linkedin.com/in/-mohamedosama</a></li>
+              </ul>
+            </div>
           </div>
           
           <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <Card className="overflow-hidden card-shadow mb-8">
+              <CardContent className="p-0">
+                <div className="bg-primary/5 p-6">
+                  <h3 className="text-2xl font-heading font-medium mb-4">Education</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium">Bachelor of Computer Science & Artificial Intelligence</h4>
+                      <p className="text-sm text-gray-600">Nile University, Oct 2021 – Jun 2025</p>
+                      <p className="text-sm text-gray-600">CGPA: 3.6</p>
+                      <p className="text-sm text-gray-700 mt-2">Relevant Coursework: Artificial Intelligence, Machine Learning, Databases, Software Development, Data Analysis, Mathematics</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-2xl font-heading font-medium mb-4">Student Activities</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium">ITCS School's Representative, Nile University Students' Union</h4>
+                      <p className="text-sm text-gray-600">Aug 2023 – Mar 2024</p>
+                      <p className="text-sm text-gray-700">Addressed student concerns for over 1000 peers and led initiatives to enhance student life.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Junior Member, ICPC NU Community</h4>
+                      <p className="text-sm text-gray-600">Oct 2022 – Present</p>
+                      <p className="text-sm text-gray-700">Participated in the Egyptian Collegiate Programming Contest (ECPC).</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium">Technical Member, IEEE NU Student Branch</h4>
+                      <p className="text-sm text-gray-600">Oct 2022 – Oct 2023</p>
+                      <p className="text-sm text-gray-700">Organized workshops on AI and machine learning and contributed to engineering projects.</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className="overflow-hidden card-shadow">
               <CardContent className="p-0">
                 <div className="bg-primary/5 p-6">
-                  <h3 className="text-2xl font-heading font-medium mb-4">My Skills</h3>
+                  <h3 className="text-2xl font-heading font-medium mb-4">Technical Skills</h3>
                   <div className="flex flex-wrap gap-2">
-                    {skills.map((skill, index) => (
+                    {technicalSkills.map((skill, index) => (
                       <span 
                         key={index}
                         className="px-3 py-1 bg-white text-primary rounded-full text-sm font-medium shadow-sm"
@@ -62,16 +112,30 @@ const About = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-2xl font-heading font-medium mb-4">Education</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-medium">M.S. in Artificial Intelligence</h4>
-                      <p className="text-sm text-gray-600">Stanford University, 2020-2022</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium">B.S. in Computer Science</h4>
-                      <p className="text-sm text-gray-600">MIT, 2016-2020</p>
-                    </div>
+                  <h3 className="text-2xl font-heading font-medium mb-4">Advanced Skills</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {advancedSkills.map((skill, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 bg-white text-primary rounded-full text-sm font-medium shadow-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-2xl font-heading font-medium mb-4">Soft Skills</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {softSkills.map((skill, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 bg-white text-primary rounded-full text-sm font-medium shadow-sm"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </CardContent>

@@ -8,46 +8,67 @@ import { Download } from 'lucide-react';
 const Resume = () => {
   const experiences = [
     {
-      title: 'Senior Data Scientist',
-      company: 'TechCorp AI',
-      period: '2022 - Present',
-      description: 'Lead the development of machine learning solutions for forecasting and anomaly detection. Improved prediction accuracy by 35%.'
+      title: 'LLM Freelancer',
+      company: 'Digis2',
+      location: 'Remote',
+      period: 'Apr 2025 - Present',
+      description: [
+        'Deployed large language models in production using CPU-optimized techniques and GPU acceleration via CUDA.',
+        'Fine-tuned open-source LLMs for tasks such as summarization, classification, and conversational AI.',
+        'Built lightweight, locally deployable pipelines for environments with limited compute resources.'
+      ]
     },
     {
-      title: 'AI Engineer',
-      company: 'DataSolutions Inc.',
-      period: '2020 - 2022',
-      description: 'Implemented NLP models for text classification and sentiment analysis. Deployed models in production environment using Docker and Kubernetes.'
+      title: 'AI Engineer, Team Lead – LLM Team',
+      company: 'Firrnas',
+      location: 'Cairo, Egypt',
+      period: 'Aug 2024 - Present',
+      description: [
+        'Lead the LLM team, managing task delegation, tracking progress, and ensuring project timelines.',
+        'Applied computer vision for object detection and segmentation in steel factory environments.',
+        'Fine-tuned LLMs and implemented Retrieval-Augmented Generation (RAG) for advanced information retrieval.',
+        'Built a digital twin using NVIDIA Omniverse for real-time production monitoring.'
+      ]
     },
     {
-      title: 'Machine Learning Intern',
-      company: 'InnovateAI',
-      period: '2019 - 2020',
-      description: 'Assisted in developing computer vision algorithms for object detection. Conducted data preprocessing and feature engineering.'
+      title: 'DEMI Coding Instructor',
+      company: 'iSchool, Instructors Department',
+      location: 'Remote, Egypt',
+      period: 'Jun 2024 - Oct 2024',
+      description: [
+        'Taught programming fundamentals and AI concepts to young learners.',
+        'Provided support with grading, student queries, and project guidance using Pictoblox.'
+      ]
+    },
+    {
+      title: 'Data Science Intern',
+      company: 'Misr El-Kheir Foundation',
+      location: 'Cairo, Egypt',
+      period: 'Sep 2023 - Dec 2023',
+      description: [
+        'Conducted data validation, cleaning, and exploratory analysis.',
+        'Visualized statistical trends and supported data-driven decision-making.'
+      ]
+    },
+    {
+      title: 'Junior Teaching Assistant',
+      company: 'Nile University ITCS School',
+      location: 'Giza, Egypt',
+      period: 'Oct 2022 - Jun 2023',
+      description: [
+        'Assisted in Discrete Mathematics instruction for over 180 students.',
+        'Led tutoring sessions and supported grading and academic inquiries.'
+      ]
     }
   ];
 
-  const certifications = [
-    {
-      title: 'TensorFlow Developer Certification',
-      issuer: 'Google',
-      year: '2022'
-    },
-    {
-      title: 'Deep Learning Specialization',
-      issuer: 'Coursera (Andrew Ng)',
-      year: '2021'
-    },
-    {
-      title: 'AWS Machine Learning Specialty',
-      issuer: 'Amazon Web Services',
-      year: '2021'
-    },
-    {
-      title: 'Data Science Professional Certificate',
-      issuer: 'IBM',
-      year: '2020'
-    }
+  const achievements = [
+    "Participated in GenZeurs Hackathon 2023",
+    "Student Union Readiness Program 2023",
+    "3rd Place – IEEE Helwan RAS Auxillio 6.0 (Robotics Manufacturing 2023)",
+    "2nd Place – IEEE Helwan RAS Auxillio 5.0 (Robotics Manufacturing 2022)",
+    "Full Scholarship – Nile University ITCS School (2021)",
+    "1st Place – "Abakera TV Show" Season 10 (General Information, 2020)"
   ];
 
   return (
@@ -69,7 +90,7 @@ const Resume = () => {
           <div className="flex justify-center mb-6">
             <TabsList>
               <TabsTrigger value="experience">Experience</TabsTrigger>
-              <TabsTrigger value="certifications">Certifications</TabsTrigger>
+              <TabsTrigger value="achievements">Achievements</TabsTrigger>
             </TabsList>
           </div>
           
@@ -82,28 +103,32 @@ const Resume = () => {
                       <div>
                         <h3 className="text-xl font-heading font-medium">{exp.title}</h3>
                         <p className="text-primary font-medium">{exp.company}</p>
+                        <p className="text-gray-500">{exp.location}</p>
                       </div>
                       <span className="text-gray-500 text-sm mt-2 md:mt-0">{exp.period}</span>
                     </div>
-                    <p className="text-gray-700">{exp.description}</p>
+                    <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                      {exp.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </TabsContent>
           
-          <TabsContent value="certifications">
-            <div className="grid md:grid-cols-2 gap-6">
-              {certifications.map((cert, index) => (
-                <Card key={index} className="card-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-heading font-medium mb-2">{cert.title}</h3>
-                    <p className="text-gray-700">{cert.issuer}</p>
-                    <p className="text-gray-500 text-sm">{cert.year}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <TabsContent value="achievements">
+            <Card className="card-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-heading font-medium mb-4">Achievements & Recognition</h3>
+                <ul className="list-disc pl-5 text-gray-700 space-y-3">
+                  {achievements.map((achievement, index) => (
+                    <li key={index} className="text-lg">{achievement}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
       </div>

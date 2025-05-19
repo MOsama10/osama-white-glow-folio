@@ -7,32 +7,46 @@ import { Briefcase, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: 'Sentiment Analysis Model',
-      description: 'Built a deep learning model to analyze customer feedback sentiment with 95% accuracy using BERT and PyTorch.',
+      title: 'RAG Project',
+      description: 'Developed a local Retrieval-Augmented Generation system for enterprise-grade QA with schema-aware logic and local deployment using FastAPI.',
       image: '/placeholder.svg',
-      tags: ['NLP', 'PyTorch', 'BERT'],
-      github: 'https://github.com/mohamed-osama/sentiment-analysis'
+      tags: ['RAG', 'PyTorch', 'Hugging Face', 'FastAPI'],
+      github: 'https://github.com/MOsama10/RAG_Project'
     },
     {
-      title: 'Object Detection System',
-      description: 'Developed a real-time object detection system using YOLOv5 for surveillance applications.',
+      title: 'Katana NLP-to-SQL Platform',
+      description: 'Built a fully offline NLP-to-SQL system for Katana telecom analytics. Converts English queries into SQL using domain-aware logic and dynamic schema handling.',
       image: '/placeholder.svg',
-      tags: ['Computer Vision', 'Python', 'YOLOv5'],
-      github: 'https://github.com/mohamed-osama/object-detection'
+      tags: ['FastAPI', 'PostgreSQL', 'SQLCoder', 'llama.cpp'],
+      github: 'https://github.com/MOsama10/katana-nlp-to-sql'
     },
     {
-      title: 'Data Visualization Dashboard',
-      description: 'Created an interactive dashboard using React and D3.js to visualize complex datasets for business insights.',
+      title: 'Hieroglyphic Translation',
+      description: 'Designed a CV-NLP pipeline that detects and translates ancient Egyptian hieroglyphics into English using transformer-based models.',
       image: '/placeholder.svg',
-      tags: ['React', 'D3.js', 'Data Visualization'],
-      github: 'https://github.com/mohamed-osama/data-dashboard'
+      tags: ['Python', 'Transformers', 'Vision Models', 'Hugging Face'],
+      github: 'https://github.com/MOsama10/Hieroglyphic-translation-to-English'
     },
     {
-      title: 'Recommendation Engine',
-      description: 'Built a content-based recommendation system for a streaming platform using collaborative filtering.',
+      title: 'Production to Instruction',
+      description: 'Transformed raw production logs into human-readable instructions using large language models and prompt engineering for enhanced operational clarity.',
       image: '/placeholder.svg',
-      tags: ['Machine Learning', 'Python', 'Recommender Systems'],
-      github: 'https://github.com/mohamed-osama/recommender'
+      tags: ['PyTorch', 'LLMs', 'NLP', 'Prompt Engineering'],
+      github: 'https://github.com/MOsama10/production-to-instruction'
+    },
+    {
+      title: 'Speech-to-Speech Translation',
+      description: 'Built an end-to-end speech-to-speech translation pipeline using Whisper for ASR and XTTS for TTS with FastAPI for local deployment.',
+      image: '/placeholder.svg',
+      tags: ['XTTS', 'PyTorch', 'Whisper', 'FastAPI'],
+      github: 'https://github.com/MOsama10/Speech-to-Speech'
+    },
+    {
+      title: 'AgriCash Avatar Guide',
+      description: 'Built an interactive avatar guiding users through the AgriCash app using XTTS, CUDA, and advanced RAG technologies.',
+      image: '/placeholder.svg',
+      tags: ['PyTorch', 'CUDA', 'Advanced RAG', 'XTTS'],
+      github: 'https://github.com/MOsama10'
     }
   ];
 
@@ -51,12 +65,10 @@ const Projects = () => {
               className="overflow-hidden card-shadow animate-slide-up"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-48 overflow-hidden bg-primary/5">
+                <div className="flex items-center justify-center h-full">
+                  <h3 className="text-3xl font-bold text-primary/30">{project.title.split(' ')[0]}</h3>
+                </div>
               </div>
               
               <CardHeader>
