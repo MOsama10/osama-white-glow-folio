@@ -25,25 +25,47 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+  
+    try {
+      const result = await emailjs.send(
+        'service_djyyccm', // Replace with your EmailJS service ID
+        'template_47jj9vd', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'UlTinkLdkXKch8URV' // Replace with your EmailJS public key
+      );
+  
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
+  
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
+  
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
+
 
   return (
     <section id="contact" className="bg-gray-50">
