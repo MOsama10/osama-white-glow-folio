@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser'; // ✅ move this to the top!
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -24,8 +24,6 @@ const Contact = () => {
       [name]: value
     }));
   };
-
-  import emailjs from '@emailjs/browser';
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
