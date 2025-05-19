@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Add useEffect
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -40,9 +40,8 @@ const Contact = () => {
         'template_z8aa2rq', // Template ID
         {
           name: formData.name,
-          email: formData.email,
-          title: formData.subject, // Ensure this matches your template variable
-          message: formData.message,
+          email: formData.email, // ✅ Matches template
+          message: formData.message, // ✅ Matches template
         }
       );
 
