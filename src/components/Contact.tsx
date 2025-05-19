@@ -25,21 +25,23 @@ const Contact = () => {
     }));
   };
 
+  import emailjs from '@emailjs/browser';
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
   
     try {
       const result = await emailjs.send(
-        'service_djyyccm', // Replace with your EmailJS service ID
-        'template_47jj9vd', // Replace with your EmailJS template ID
+        'service_djyyccm',
+        'template_47jj9vd',
         {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
+          name: formData.name,
+          email: formData.email,
+          title: formData.subject,
           message: formData.message,
         },
-        'UlTinkLdkXKch8URV' // Replace with your EmailJS public key
+        'UlTinkLdkXKch8URV'
       );
   
       toast({
@@ -65,7 +67,6 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
 
   return (
     <section id="contact" className="bg-gray-50">
