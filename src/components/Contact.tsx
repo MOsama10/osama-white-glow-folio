@@ -33,9 +33,9 @@ const Contact = () => {
 
     try {
       // Replace these with your actual EmailJS service ID, template ID, and public key
-      const serviceId = 'service_your_service_id';
-      const templateId = 'template_your_template_id';
-      const publicKey = 'your_public_key';
+      const serviceId = 'service_djyyccm';
+      const templateId = 'template_z8aa2rq';
+      const publicKey = 'UlTinkLdkXKch8URV';
 
       const result = await emailjs.sendForm(
         serviceId,
