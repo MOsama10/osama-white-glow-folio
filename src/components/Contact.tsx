@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser'; // ✅ move this to the top!
+import React, { useState, useEffect } from 'react'; // Add useEffect
+import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -17,6 +17,11 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('UlTinkLdkXKch8URV'); // Your Public Key
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -28,38 +33,36 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
+
     try {
       const result = await emailjs.send(
-        'service_djyyccm',
-        'template_z8aa2rq',
+        'service_djyyccm', // Service ID
+        'template_z8aa2rq', // Template ID
         {
           name: formData.name,
           email: formData.email,
-          title: formData.subject,
+          title: formData.subject, // Ensure this matches your template variable
           message: formData.message,
-        },
-        'UlTinkLdkXKch8URV'
+        }
       );
-  
+
       toast({
-        title: "Message sent!",
+        title: 'Message sent!',
         description: "Thank you for your message. I'll get back to you soon.",
       });
-  
+
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-  
     } catch (error) {
-      console.error(error);
+      console.error('EmailJS error:', error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
-        variant: "destructive"
+        title: 'Error',
+        description: 'Failed to send message. Please try again later.',
+        variant: 'destructive'
       });
     } finally {
       setIsSubmitting(false);
@@ -73,7 +76,7 @@ const Contact = () => {
           <Mail className="h-7 w-7 mr-3 text-primary" />
           <h2 className="section-title">Contact Me</h2>
         </div>
-        
+
         <div className="max-w-3xl mx-auto animate-slide-up">
           <Card className="card-shadow">
             <CardContent className="p-6">
@@ -81,7 +84,7 @@ const Contact = () => {
                 Have a question or want to work together? Fill out the form below and 
                 I'll get back to you as soon as possible.
               </p>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -95,7 +98,7 @@ const Contact = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">Email</label>
                     <Input
@@ -109,7 +112,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">Subject</label>
                   <Input
@@ -121,7 +124,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">Message</label>
                   <Textarea
@@ -134,7 +137,7 @@ const Contact = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="flex justify-center">
                   <Button 
                     type="submit" 
@@ -142,7 +145,7 @@ const Contact = () => {
                     disabled={isSubmitting}
                     className="px-8"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </div>
               </form>
