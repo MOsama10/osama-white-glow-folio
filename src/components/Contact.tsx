@@ -37,16 +37,17 @@ const Contact = () => {
   
     try {
       const result = await emailjs.send(
-        'service_djyyccm',
-        'template_z8aa2rq',
+        'service_djyyccm',       // Your Service ID
+        'template_z8aa2rq',      // Your Template ID
         {
           name: formData.name,
           email: formData.email,
           title: formData.subject,
           message: formData.message,
         },
-        'iQkSwoE51o5IRk6lYb_3V' // ✅ This must be passed again in production
+        'iQkSwoE51o5IRk6lYb_3V' // 🛠️ Use private key only
       );
+
   
       toast({
         title: 'Message sent!',
