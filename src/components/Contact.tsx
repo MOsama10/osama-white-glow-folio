@@ -41,9 +41,10 @@ const Contact = () => {
         {
           name: formData.name,
           email: formData.email,
-          title: formData.subject,  // ✅ This is what was missing
+          title: formData.subject,
           message: formData.message,
-        }
+        },
+        'UlTinkLdkXKch8URV' // ✅ This must be passed again in production
       );
   
       toast({
