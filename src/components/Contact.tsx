@@ -32,45 +32,48 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-  
-    try {
-      const result = await emailjs.send(
-        'service_djyyccm',       // Your Service ID
-        'template_z8aa2rq',      // Your Template ID
-        {
-          name: formData.name,
-          email: formData.email,
-          title: formData.subject,
-          message: formData.message,
-        },
-        'iQkSwoE51o5IRk6lYb_3V' // 🛠️ Use private key only
-      );
+  e.preventDefault();
+  setIsSubmitting(true);
 
-  
+  try {
+    const response = await fetch('https://formspree.io/f/xjkwzged', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      })
+    });
+
+    if (response.ok) {
       toast({
-        title: 'Message sent!',
+        title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
-  
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again later.',
-        variant: 'destructive'
-      });
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      throw new Error('Network response was not ok');
     }
-  };
+  } catch (error) {
+    console.error(error);
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again later.",
+      variant: "destructive"
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section id="contact" className="bg-gray-50">
