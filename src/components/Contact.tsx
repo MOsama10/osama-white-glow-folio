@@ -30,26 +30,27 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
       const result = await emailjs.send(
-        'service_djyyccm', // Service ID
-        'template_z8aa2rq', // Template ID
+        'service_djyyccm',
+        'template_z8aa2rq',
         {
           name: formData.name,
-          email: formData.email, // ✅ Matches template
-          message: formData.message, // ✅ Matches template
+          email: formData.email,
+          title: formData.subject,  // ✅ This is what was missing
+          message: formData.message,
         }
       );
-
+  
       toast({
         title: 'Message sent!',
         description: "Thank you for your message. I'll get back to you soon.",
       });
-
+  
       setFormData({
         name: '',
         email: '',
