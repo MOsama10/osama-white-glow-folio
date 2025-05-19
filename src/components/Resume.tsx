@@ -68,7 +68,7 @@ const Resume = () => {
     "3rd Place – IEEE Helwan RAS Auxillio 6.0 (Robotics Manufacturing 2023)",
     "2nd Place – IEEE Helwan RAS Auxillio 5.0 (Robotics Manufacturing 2022)",
     "Full Scholarship – Nile University ITCS School (2021)",
-    "1st Place – "Abakera TV Show" Season 10 (General Information, 2020)"
+    "1st Place – 'Abakera TV Show' Season 10 (General Information, 2020)"
   ];
 
   return (
