@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,22 +32,19 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/xjkwzged', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'  // ← This is important
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message
-        })
-      });
+      // Replace these with your actual EmailJS service ID, template ID, and public key
+      const serviceId = 'service_your_service_id';
+      const templateId = 'template_your_template_id';
+      const publicKey = 'your_public_key';
 
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current!,
+        publicKey
+      );
 
-      if (response.ok) {
+      if (result.text === 'OK') {
         toast({
           title: "Message sent!",
           description: "Thank you for your message. I'll get back to you soon.",
@@ -56,7 +56,7 @@ const Contact = () => {
           message: ''
         });
       } else {
-        throw new Error('Network response was not ok');
+        throw new Error('Failed to send email');
       }
     } catch (error) {
       console.error(error);
@@ -124,7 +124,7 @@ const Contact = () => {
                 I'll get back to you as soon as possible.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">Name</label>
