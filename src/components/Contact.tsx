@@ -32,7 +32,8 @@ const Contact = () => {
       const response = await fetch('https://formspree.io/f/xjkwzged', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'  // ← This is important
         },
         body: JSON.stringify({
           name: formData.name,
@@ -41,6 +42,7 @@ const Contact = () => {
           message: formData.message
         })
       });
+
 
       if (response.ok) {
         toast({
