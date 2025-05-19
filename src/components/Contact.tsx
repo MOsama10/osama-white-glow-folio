@@ -1,6 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -18,11 +16,6 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init('UlTinkLdkXKch8URV'); // Your Public Key
-  }, []);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -32,48 +25,48 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch('https://formspree.io/f/xjkwzged', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message
-      })
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/xjkwzged', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
 
-    if (response.ok) {
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      console.error(error);
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
       });
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } else {
-      throw new Error('Network response was not ok');
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error(error);
-    toast({
-      title: "Error",
-      description: "Failed to send message. Please try again later.",
-      variant: "destructive"
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <section id="contact" className="bg-gray-50">
@@ -87,47 +80,31 @@ const Contact = () => {
           <Card className="card-shadow mb-8">
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <a
-                  href="mailto:m.osaammaa@gmail.com"
-                  className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-                >
+                <a href="mailto:m.osaammaa@gmail.com" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
                   <Mail className="h-5 w-5 mr-3 text-primary" />
                   <div>
                     <p className="text-sm font-medium">Email</p>
                     <p className="text-gray-700">m.osaammaa@gmail.com</p>
                   </div>
                 </a>
-                
-                <a
-                  href="tel:+201098408989"
-                  className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-                >
+
+                <a href="tel:+201098408989" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
                   <Phone className="h-5 w-5 mr-3 text-primary" />
                   <div>
                     <p className="text-sm font-medium">Phone</p>
                     <p className="text-gray-700">+20 1098408989</p>
                   </div>
                 </a>
-                
-                <a
-                  href="https://linkedin.com/in/-mohamedosama"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-                >
+
+                <a href="https://linkedin.com/in/-mohamedosama" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
                   <Linkedin className="h-5 w-5 mr-3 text-primary" />
                   <div>
                     <p className="text-sm font-medium">LinkedIn</p>
                     <p className="text-gray-700">linkedin.com/in/-mohamedosama</p>
                   </div>
                 </a>
-                
-                <a
-                  href="https://github.com/MOsama10"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-                >
+
+                <a href="https://github.com/MOsama10" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
                   <Github className="h-5 w-5 mr-3 text-primary" />
                   <div>
                     <p className="text-sm font-medium">GitHub</p>
