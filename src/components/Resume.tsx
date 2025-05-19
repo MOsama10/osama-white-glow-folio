@@ -81,7 +81,7 @@ const Resume = () => {
         
         <div className="flex justify-center mb-8 animate-slide-up">
           <a
-            href="/mohamed_osama_resume.pdf"
+            href="/Mohamed_Osama_CV.pdf"
             download
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
           >
