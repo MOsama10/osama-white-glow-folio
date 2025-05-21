@@ -9,7 +9,7 @@ const Resume = () => {
   const experiences = [
     {
       title: 'LLM Freelancer',
-      company: 'Digis2',
+      company: 'Digis Squared',
       location: 'Remote',
       period: 'Apr 2025 - Present',
       description: [
@@ -20,9 +20,9 @@ const Resume = () => {
     },
     {
       title: 'AI Engineer, Team Lead – LLM Team',
-      company: 'Firrnas',
+      company: 'Singularity',
       location: 'Cairo, Egypt',
-      period: 'Aug 2024 - Present',
+      period: 'Jul 2024 - Jun 2025',
       description: [
         'Lead the LLM team, managing task delegation, tracking progress, and ensuring project timelines.',
         'Applied computer vision for object detection and segmentation in steel factory environments.',
