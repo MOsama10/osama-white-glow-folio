@@ -75,14 +75,14 @@ const Resume = () => {
         
         <div className="flex justify-center mb-8 animate-slide-up">
           <a
-            href="https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV%20.pdf"
+            href="https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV%20.pdf" // 
             download
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
           >
             <Download className="h-4 w-4" />
             Download Resume (PDF)
           </a>
-          {/* Note: If the raw URL still returns 404, verify the file name and path in the repository. If the issue persists, consider hosting the file elsewhere (e.g., Google Drive) and update the href with the new direct download link. */}
+          {/* Note: If using GitHub, verify the file path (https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV%20.pdf) and recommit if needed. Otherwise, use a Google Drive link with the correct file ID. */}
         </div>
         
         <Tabs defaultValue="experience" className="w-full animate-slide-up">
