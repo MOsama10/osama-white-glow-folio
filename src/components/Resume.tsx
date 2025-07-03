@@ -75,7 +75,7 @@ const Resume = () => {
         
         <div className="flex justify-center mb-8 animate-slide-up">
           <a
-            href="https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV%20.pdf"
+            href="https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV.pdf"
             download
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
           >
