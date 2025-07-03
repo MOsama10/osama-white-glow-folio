@@ -82,7 +82,7 @@ const Resume = () => {
             <Download className="h-4 w-4" />
             Download Resume (PDF)
           </a>
-          {/* Note: Ensure the file exists at the specified path in the repository. If the file name is 'Mohamed_Osama_CV.pdf' (without a space), update the href to: https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV.pdf */}
+          {/* Note: If the raw URL still returns 404, verify the file name and path in the repository. If the issue persists, consider hosting the file elsewhere (e.g., Google Drive) and update the href with the new direct download link. */}
         </div>
         
         <Tabs defaultValue="experience" className="w-full animate-slide-up">
