@@ -18,9 +18,9 @@ const Hero = () => {
               Data Scientist & AI Engineer
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
-              A passionate and results-driven professional with expertise in machine learning, 
-              AI, and data analysis. Currently pursuing a Bachelor's degree in Computer Science 
-              at Nile University.
+              A passionate and results-driven Data Scientist and AI Engineer with a strong foundation 
+              in machine learning, AI, and data analysis. Graduated with a Bachelor's degree in 
+              Computer Science and Artificial Intelligence from Nile University.
             </p>
             <div className="flex space-x-4">
               <Button asChild size="lg">

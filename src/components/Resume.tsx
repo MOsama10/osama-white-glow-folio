@@ -19,35 +19,26 @@ const Resume = () => {
       ]
     },
     {
+      title: 'DEMI Coding Instructor',
+      company: 'iSchool',
+      location: 'Cairo & Giza, Egypt (Remote & On-site)',
+      period: 'Jun 2024 - Present',
+      description: [
+        'Specialized in teaching programming and AI basics to children in both remote and on-site settings.',
+        'Conducted engaging tutoring sessions and adapted teaching styles based on age and skill level.',
+        'Focused on interactive learning using Pictoblox and real-world AI examples for young learners.'
+      ]
+    },
+    {
       title: 'AI Engineer, Team Lead – LLM Team',
       company: 'Singularity',
       location: 'Cairo, Egypt',
-      period: 'Jul 2024 - Jun 2025',
+      period: 'Jul 2024 - May 2025',
       description: [
         'Lead the LLM team, managing task delegation, tracking progress, and ensuring project timelines.',
         'Applied computer vision for object detection and segmentation in steel factory environments.',
         'Fine-tuned LLMs and implemented Retrieval-Augmented Generation (RAG) for advanced information retrieval.',
         'Built a digital twin using NVIDIA Omniverse for real-time production monitoring.'
-      ]
-    },
-    {
-      title: 'DEMI Coding Instructor',
-      company: 'iSchool, Instructors Department',
-      location: 'Remote, Egypt',
-      period: 'Jun 2024 - Oct 2024',
-      description: [
-        'Taught programming fundamentals and AI concepts to young learners.',
-        'Provided support with grading, student queries, and project guidance using Pictoblox.'
-      ]
-    },
-    {
-      title: 'Data Science Intern',
-      company: 'Misr El-Kheir Foundation',
-      location: 'Cairo, Egypt',
-      period: 'Sep 2023 - Dec 2023',
-      description: [
-        'Conducted data validation, cleaning, and exploratory analysis.',
-        'Visualized statistical trends and supported data-driven decision-making.'
       ]
     },
     {
@@ -63,12 +54,13 @@ const Resume = () => {
   ];
 
   const achievements = [
-    "Participated in GenZeurs Hackathon 2023",
-    "Student Union Readiness Program 2023",
     "3rd Place – IEEE Helwan RAS Auxillio 6.0 (Robotics Manufacturing 2023)",
     "2nd Place – IEEE Helwan RAS Auxillio 5.0 (Robotics Manufacturing 2022)",
-    "Full Scholarship – Nile University ITCS School (2021)",
-    "1st Place – 'Abakera TV Show' Season 10 (General Information, 2020)"
+    "Full Scholarship – Nile University ITCS School (2021)"
+  ];
+
+  const publications = [
+    "Osama, M., Mamdouh, D., Attia, M., Mohamed, N., Lotfy, A., Arafa, T., Rashed, E.A., & Khoriba, G. (2025). Advancements in Radiology Report Generation: A Comprehensive Analysis. Bioengineering, 12(7), Article 693."
   ];
 
   return (
@@ -95,6 +87,7 @@ const Resume = () => {
             <TabsList>
               <TabsTrigger value="experience">Experience</TabsTrigger>
               <TabsTrigger value="achievements">Achievements</TabsTrigger>
+              <TabsTrigger value="publications">Publications</TabsTrigger>
             </TabsList>
           </div>
           
@@ -129,6 +122,19 @@ const Resume = () => {
                 <ul className="list-disc pl-5 text-gray-700 space-y-3">
                   {achievements.map((achievement, index) => (
                     <li key={index} className="text-lg">{achievement}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="publications">
+            <Card className="card-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-heading font-medium mb-4">Publications</h3>
+                <ul className="list-disc pl-5 text-gray-700 space-y-3">
+                  {publications.map((publication, index) => (
+                    <li key={index} className="text-lg leading-relaxed">{publication}</li>
                   ))}
                 </ul>
               </CardContent>

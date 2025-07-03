@@ -10,13 +10,12 @@ const About = () => {
   ];
 
   const advancedSkills = [
-    "LLMs", "Retrieval-Augmented Generation (RAG)", "NLP", 
-    "Computer Vision", "Machine Learning", "Deep Learning"
+    "LLMs", "Retrieval-Augmented Generation (RAG)", "NLP"
   ];
 
   const softSkills = [
     "Presentation", "Team Management", "Project Management", 
-    "Communication", "Problem Solving", "Research"
+    "Communication", "Research", "Report Writing", "Public Speaking"
   ];
 
   return (
@@ -32,8 +31,8 @@ const About = () => {
             <h3 className="text-2xl font-heading font-medium mb-4">Who I Am</h3>
             <p className="text-gray-700 mb-4">
               A passionate and results-driven Data Scientist and AI Engineer with a strong foundation 
-              in machine learning, AI, and data analysis. Currently pursuing a Bachelor's degree in 
-              Computer Science and Artificial Intelligence at Nile University.
+              in machine learning, AI, and data analysis. Graduated with a Bachelor's degree in 
+              Computer Science and Artificial Intelligence from Nile University.
             </p>
             <p className="text-gray-700 mb-4">
               Experienced in working with large language models (LLMs), computer vision, and natural 
@@ -41,7 +40,7 @@ const About = () => {
               and deploying AI solutions in production environments.
             </p>
             <p className="text-gray-700">
-              Known for a strong problem-solving ability, collaboration skills, and commitment to 
+              Known for strong problem-solving ability, collaboration skills, and commitment to 
               continuous learning in cutting-edge technologies.
             </p>
             
@@ -65,7 +64,7 @@ const About = () => {
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-medium">Bachelor of Computer Science & Artificial Intelligence</h4>
-                      <p className="text-sm text-gray-600">Nile University, Oct 2021 – Jun 2025</p>
+                      <p className="text-sm text-gray-600">Nile University, Graduated: Jun 2025</p>
                       <p className="text-sm text-gray-600">CGPA: 3.6</p>
                       <p className="text-sm text-gray-700 mt-2">Relevant Coursework: Artificial Intelligence, Machine Learning, Databases, Software Development, Data Analysis, Mathematics</p>
                     </div>
@@ -82,7 +81,7 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="font-medium">Junior Member, ICPC NU Community</h4>
-                      <p className="text-sm text-gray-600">Oct 2022 – Present</p>
+                      <p className="text-sm text-gray-600">Oct 2022 – Jun 2024</p>
                       <p className="text-sm text-gray-700">Participated in the Egyptian Collegiate Programming Contest (ECPC).</p>
                     </div>
                     <div>

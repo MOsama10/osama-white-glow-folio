@@ -7,6 +7,13 @@ import { Briefcase, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: 'PRISMA-Based MARL Review Paper Companion',
+      description: 'Developed a companion codebase for a systematic review paper on Multi-Agent Reinforcement Learning (MARL) based on PRISMA guidelines. Includes data extraction, visual analysis, and reproducible insights for MARL literature trends.',
+      image: '/placeholder.svg',
+      tags: ['Python', 'Jupyter', 'SciPy', 'Matplotlib', 'Pandas', 'Zotero'],
+      github: 'https://github.com/MOsama10/prisma-marl-review'
+    },
+    {
       title: 'RAG Project',
       description: 'Developed a local Retrieval-Augmented Generation system for enterprise-grade QA with schema-aware logic and local deployment using FastAPI.',
       image: '/placeholder.svg',
@@ -21,7 +28,7 @@ const Projects = () => {
       github: 'https://github.com/MOsama10/katana-nlp-to-sql'
     },
     {
-      title: 'Hieroglyphic Translation',
+      title: 'Hieroglyphic Translation to English',
       description: 'Designed a CV-NLP pipeline that detects and translates ancient Egyptian hieroglyphics into English using transformer-based models.',
       image: '/placeholder.svg',
       tags: ['Python', 'Transformers', 'Vision Models', 'Hugging Face'],
@@ -35,17 +42,31 @@ const Projects = () => {
       github: 'https://github.com/MOsama10/production-to-instruction'
     },
     {
-      title: 'Speech-to-Speech Translation',
-      description: 'Built an end-to-end speech-to-speech translation pipeline using Whisper for ASR and XTTS for TTS with FastAPI for local deployment.',
+      title: 'Speech-to-Speech Translation System',
+      description: 'Built an end-to-end speech-to-speech translation pipeline using Whisper for ASR and XTTS for TTS. Integrated with FastAPI for local deployment, enabling seamless voice translation across multiple languages.',
       image: '/placeholder.svg',
-      tags: ['XTTS', 'PyTorch', 'Whisper', 'FastAPI'],
+      tags: ['XTTS', 'PyTorch', 'Whisper', 'FastAPI', 'Hugging Face'],
       github: 'https://github.com/MOsama10/Speech-to-Speech'
     },
     {
-      title: 'AgriCash Avatar Guide',
+      title: 'AgriCash Avatar Speech-to-Speech Guide',
       description: 'Built an interactive avatar guiding users through the AgriCash app using XTTS, CUDA, and advanced RAG technologies.',
       image: '/placeholder.svg',
       tags: ['PyTorch', 'CUDA', 'Advanced RAG', 'XTTS'],
+      github: 'https://github.com/MOsama10'
+    },
+    {
+      title: 'Production Chatbot for Manufacturing',
+      description: 'Built a locally deployed chatbot for production QA, supporting queries on material codes and component data.',
+      image: '/placeholder.svg',
+      tags: ['PyTorch', 'CUDA', 'Advanced RAG', 'FastAPI'],
+      github: 'https://github.com/MOsama10'
+    },
+    {
+      title: 'Crypto Stock Market Analysis',
+      description: 'Predicted cryptocurrency price changes using statistical and ML techniques.',
+      image: '/placeholder.svg',
+      tags: ['Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'PyTorch'],
       github: 'https://github.com/MOsama10'
     }
   ];
@@ -58,26 +79,26 @@ const Projects = () => {
           <h2 className="section-title">My Projects</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={index} 
               className="overflow-hidden card-shadow animate-slide-up"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <div className="h-48 overflow-hidden bg-primary/5">
+              <div className="h-32 overflow-hidden bg-primary/5">
                 <div className="flex items-center justify-center h-full">
-                  <h3 className="text-3xl font-bold text-primary/30">{project.title.split(' ')[0]}</h3>
+                  <h3 className="text-2xl font-bold text-primary/30">{project.title.split(' ')[0]}</h3>
                 </div>
               </div>
               
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-lg">{project.title}</CardTitle>
               </CardHeader>
               
               <CardContent>
-                <p className="text-gray-700 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <p className="text-gray-700 text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-1 mb-4">
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i}
