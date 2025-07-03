@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Download } from 'lucide-react';
+import { Download, ExternalLink } from 'lucide-react';
 
 const Resume = () => {
   const experiences = [
@@ -60,7 +60,10 @@ const Resume = () => {
   ];
 
   const publications = [
-    "Osama, M., Mamdouh, D., Attia, M., Mohamed, N., Lotfy, A., Arafa, T., Rashed, E.A., & Khoriba, G. (2025). Advancements in Radiology Report Generation: A Comprehensive Analysis. Bioengineering, 12(7), Article 693."
+    {
+      title: "Osama, M., Mamdouh, D., Attia, M., Mohamed, N., Lotfy, A., Arafa, T., Rashed, E.A., & Khoriba, G. (2025). Advancements in Radiology Report Generation: A Comprehensive Analysis. Bioengineering, 12(7), Article 693.",
+      url: "https://www.mdpi.com/2306-5354/12/7/693"
+    }
   ];
 
   return (
@@ -73,7 +76,7 @@ const Resume = () => {
         
         <div className="flex justify-center mb-8 animate-slide-up">
           <a
-            href="/Mohamed_Osama_CV.pdf"
+            href="https://raw.githubusercontent.com/MOsama10/MOsama10.github.io/main/public/Mohamed_Osama_CV.pdf"
             download
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
           >
@@ -134,7 +137,17 @@ const Resume = () => {
                 <h3 className="text-xl font-heading font-medium mb-4">Publications</h3>
                 <ul className="list-disc pl-5 text-gray-700 space-y-3">
                   {publications.map((publication, index) => (
-                    <li key={index} className="text-lg leading-relaxed">{publication}</li>
+                    <li key={index} className="text-lg leading-relaxed">
+                      <a 
+                        href={publication.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                      >
+                        {publication.title}
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </li>
                   ))}
                 </ul>
               </CardContent>
