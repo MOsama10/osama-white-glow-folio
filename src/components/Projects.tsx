@@ -47,27 +47,6 @@ const Projects = () => {
       image: '/placeholder.svg',
       tags: ['XTTS', 'PyTorch', 'Whisper', 'FastAPI', 'Hugging Face'],
       github: 'https://github.com/MOsama10/Speech-to-Speech'
-    },
-    {
-      title: 'AgriCash Avatar Speech-to-Speech Guide',
-      description: 'Built an interactive avatar guiding users through the AgriCash app using XTTS, CUDA, and advanced RAG technologies.',
-      image: '/placeholder.svg',
-      tags: ['PyTorch', 'CUDA', 'Advanced RAG', 'XTTS'],
-      github: 'https://github.com/MOsama10'
-    },
-    {
-      title: 'Production Chatbot for Manufacturing',
-      description: 'Built a locally deployed chatbot for production QA, supporting queries on material codes and component data.',
-      image: '/placeholder.svg',
-      tags: ['PyTorch', 'CUDA', 'Advanced RAG', 'FastAPI'],
-      github: 'https://github.com/MOsama10'
-    },
-    {
-      title: 'Crypto Stock Market Analysis',
-      description: 'Predicted cryptocurrency price changes using statistical and ML techniques.',
-      image: '/placeholder.svg',
-      tags: ['Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'PyTorch'],
-      github: 'https://github.com/MOsama10'
     }
   ];
 
