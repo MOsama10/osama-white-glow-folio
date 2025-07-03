@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -76,13 +75,14 @@ const Resume = () => {
         
         <div className="flex justify-center mb-8 animate-slide-up">
           <a
-            href="https://raw.githubusercontent.com/MOsama10/MOsama10.github.io/main/public/Mohamed_Osama_CV.pdf"
+            href="https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV%20.pdf"
             download
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
           >
             <Download className="h-4 w-4" />
             Download Resume (PDF)
           </a>
+          {/* Note: Ensure the file exists at the specified path in the repository. If the file name is 'Mohamed_Osama_CV.pdf' (without a space), update the href to: https://raw.githubusercontent.com/MOsama10/osama-white-glow-folio/main/public/Mohamed_Osama_CV.pdf */}
         </div>
         
         <Tabs defaultValue="experience" className="w-full animate-slide-up">
