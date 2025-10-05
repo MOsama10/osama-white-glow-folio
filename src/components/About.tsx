@@ -32,9 +32,9 @@ const About = () => {
           <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-2xl font-heading font-medium mb-4">Who I Am</h3>
             <p className="text-gray-700 mb-4">
-              Fresh graduate AI Engineer with hands-on experience in LLMs, computer vision, and medical AI. 
-              Skilled in fine-tuning models (Mistral, LLaMA), CUDA optimization, and leading real-world projects. 
-              Published researcher with a strong foundation in deploying production-ready AI systems.
+              As Co-Founder and CTO at Vionex Digital Solutions, I drive AI, ML, and computer vision strategies to create scalable solutions for e-commerce, healthcare, and education industries. My efforts focus on aligning technology with business objectives to foster digital transformation across Egypt, Africa, and the Middle East.  
+
+With a B.Sc. in Computer Science and Artificial Intelligence from Nile University and an ongoing MSc in Data Science, I contribute to AI innovation as an Instructor at NTI and Technical Lead at Retailo. By fostering collaboration and guiding teams, I aim to develop cutting-edge solutions in NLP, computer vision, and large language models to address real-world challenges in retail, logistics, and beyond.
             </p>
             <p className="text-gray-700 mb-4">
               Currently serving as Co-Founder & CTO at Vionex Digital Solutions and Technical Lead at Retailo, 
