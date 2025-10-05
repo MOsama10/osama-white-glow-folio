@@ -18,8 +18,9 @@ const Hero = () => {
               Data Scientist / AI Engineer
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
-AI & Technology Leader driving innovation across e-commerce, healthcare, and education.
-Co-Founder & CTO at Vionex Digital Solutions and Technical Lead at Retailo, leveraging AI, ML, and computer vision to build scalable, business-aligned solutions across Egypt, Africa, and the Middle East. With a B.Sc. in Computer Science & AI and ongoing M.Sc. in Data Science, I also contribute to AI education as an Instructor at NTI. Passionate about solving real-world challenges through NLP, computer vision, and large language models.
+              Fresh graduate AI Engineer with hands-on experience in LLMs, computer vision, and medical AI. 
+              Skilled in fine-tuning models (Mistral, LLaMA), CUDA optimization, and leading real-world projects. 
+              Published researcher with a strong foundation in deploying production-ready AI systems.
             </p>
             <div className="flex space-x-4">
               <Button asChild size="lg">
