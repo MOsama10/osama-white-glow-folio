@@ -7,37 +7,68 @@ import { Download, ExternalLink } from 'lucide-react';
 const Resume = () => {
   const experiences = [
     {
+      title: 'Co-Founder & CTO',
+      company: 'Vionex Digital Solutions',
+      location: 'Cairo, Egypt (Hybrid)',
+      period: 'Jul 2025 - Present',
+      description: [
+        'Spearheaded AI, ML, and computer vision initiatives at Vionex Digital Solutions, enhancing technology solutions for various sectors.',
+        'Led a dynamic tech team to develop scalable solutions tailored for e-commerce, healthcare, and education industries.',
+        'Aligned technology strategies with business objectives to drive digital transformation across Egypt, Africa, and the Middle East.'
+      ]
+    },
+    {
+      title: 'Technical Lead, AI Department',
+      company: 'Retailo',
+      location: 'Cairo, Egypt (Hybrid)',
+      period: 'Jul 2025 - Present',
+      description: [
+        'Led AI initiatives to address real-world challenges in Egypt and MENA through innovative PoC development.',
+        'Managed cross-functional AI teams, ensuring alignment of strategy with business objectives.',
+        'Drove advancements in Natural Language Processing (NLP), Computer Vision (CV), and Large Language Model (LLM) solutions in retail and logistics.'
+      ]
+    },
+    {
+      title: 'AI Instructor',
+      company: 'National Telecommunications Institute (NTI)',
+      location: 'Cairo, Egypt',
+      period: 'Aug 2025 - Present',
+      description: [
+        'Deliver specialized training in Artificial Intelligence, including Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, and Large Language Models (LLMs).',
+        'Design and conduct practical, hands-on sessions to equip learners with both theoretical understanding and applied AI skills.'
+      ]
+    },
+    {
       title: 'LLM Freelancer',
       company: 'Digis Squared',
       location: 'Remote',
-      period: 'Apr 2025 - Present',
+      period: 'Apr 2025 - Jul 2025',
       description: [
-        'Deployed large language models in production using CPU-optimized techniques and GPU acceleration via CUDA.',
-        'Fine-tuned open-source LLMs for tasks such as summarization, classification, and conversational AI.',
-        'Built lightweight, locally deployable pipelines for environments with limited compute resources.'
+        'Deployed LLMs in production achieving 40% faster inference using CPU/GPU optimization; reduced costs by 60%.',
+        'Fine-tuned Mistral and LLaMA models for document summarization, classification, and conversational AI applications.',
+        'Built lightweight, locally deployable AI pipelines for resource-constrained environments.'
+      ]
+    },
+    {
+      title: 'AI Engineer',
+      company: 'Singularity',
+      location: 'Cairo, Egypt',
+      period: 'Jul 2024 - May 2025',
+      description: [
+        'Led LLM team, overseeing task delegation, sprint planning, and successful delivery of NLP pipelines.',
+        'Fine-tuned large language models for summarization, classification, conversational AI, and chatbot development.',
+        'Designed and deployed RAG-based systems and task-specific chatbots for real-time document retrieval in production.',
+        'Applied LoRA and quantization techniques to optimize inference for limited-resource environments.'
       ]
     },
     {
       title: 'DEMI Coding Instructor',
       company: 'iSchool',
       location: 'Cairo & Giza, Egypt (Remote & On-site)',
-      period: 'Jun 2024 - Present',
+      period: 'Jun 2024 - Aug 2025',
       description: [
-        'Specialized in teaching programming and AI basics to children in both remote and on-site settings.',
-        'Conducted engaging tutoring sessions and adapted teaching styles based on age and skill level.',
-        'Focused on interactive learning using Pictoblox and real-world AI examples for young learners.'
-      ]
-    },
-    {
-      title: 'AI Engineer, Team Lead – LLM Team',
-      company: 'Singularity',
-      location: 'Cairo, Egypt',
-      period: 'Jul 2024 - May 2025',
-      description: [
-        'Lead the LLM team, managing task delegation, tracking progress, and ensuring project timelines.',
-        'Applied computer vision for object detection and segmentation in steel factory environments.',
-        'Fine-tuned LLMs and implemented Retrieval-Augmented Generation (RAG) for advanced information retrieval.',
-        'Built a digital twin using NVIDIA Omniverse for real-time production monitoring.'
+        'Taught programming and AI fundamentals to children using Pictoblox and Python.',
+        'Developed age-appropriate curriculum covering robotics, computer vision, and machine learning principles.'
       ]
     },
     {
@@ -46,13 +77,14 @@ const Resume = () => {
       location: 'Giza, Egypt',
       period: 'Oct 2022 - Jun 2023',
       description: [
-        'Assisted in Discrete Mathematics instruction for over 180 students.',
-        'Led tutoring sessions and supported grading and academic inquiries.'
+        'Assisted in Discrete Mathematics and AI courses for 180+ students; improved performance by 20% through tutoring.',
+        'Conducted weekly office hours and supported grading with 24-hour response time for academic inquiries.'
       ]
     }
   ];
 
   const achievements = [
+    "1st Place – Graduation Project Showcase (Spring 2025), Nile University (XScene Radiology AI)",
     "3rd Place – IEEE Helwan RAS Auxillio 6.0 (Robotics Manufacturing 2023)",
     "2nd Place – IEEE Helwan RAS Auxillio 5.0 (Robotics Manufacturing 2022)",
     "Full Scholarship – Nile University ITCS School (2021)"
@@ -60,7 +92,7 @@ const Resume = () => {
 
   const publications = [
     {
-      title: "Osama, M., Mamdouh, D., Attia, M., Mohamed, N., Lotfy, A., Arafa, T., Rashed, E.A., & Khoriba, G. (2025). Advancements in Radiology Report Generation: A Comprehensive Analysis. Bioengineering, 12(7), Article 693.",
+      title: "Osama, M., Mamdouh, D., Attia, M., Mohamed, N., Lotfy, A., Arafa, T., Rashed, E.A., & Khoriba, G. (2025). XScene: Automated Radiology Report Generation Using Scene Graphs. Bioengineering, 12(7), Article 693.",
       url: "https://www.mdpi.com/2306-5354/12/7/693"
     }
   ];

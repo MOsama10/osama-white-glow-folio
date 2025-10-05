@@ -15,12 +15,12 @@ const Hero = () => {
               Hi, I'm <span className="text-primary">Mohamed Osama</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-700 mb-6">
-              Data Scientist & AI Engineer
+              Data Scientist / AI Engineer
             </h2>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
-              A passionate and results-driven Data Scientist and AI Engineer with a strong foundation 
-              in machine learning, AI, and data analysis. Graduated with a Bachelor's degree in 
-              Computer Science and Artificial Intelligence from Nile University.
+              Fresh graduate AI Engineer with hands-on experience in LLMs, computer vision, and medical AI. 
+              Skilled in fine-tuning models (Mistral, LLaMA), CUDA optimization, and leading real-world projects. 
+              Published researcher with a strong foundation in deploying production-ready AI systems.
             </p>
             <div className="flex space-x-4">
               <Button asChild size="lg">

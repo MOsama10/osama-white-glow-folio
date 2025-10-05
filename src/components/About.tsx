@@ -5,12 +5,14 @@ import { User } from 'lucide-react';
 
 const About = () => {
   const technicalSkills = [
-    "Python", "C/C++", "Java", "SQL", "CUDA", "PyTorch", 
-    "TensorFlow", "Keras", "Scikit-learn", "GANs"
+    "Python", "C/C++", "Java", "SQL", "JavaScript", "CUDA", "PyTorch", 
+    "TensorFlow", "Keras", "Scikit-learn", "OpenCV"
   ];
 
   const advancedSkills = [
-    "LLMs", "Retrieval-Augmented Generation (RAG)", "NLP"
+    "Hugging Face", "Transformers", "LoRA", "RAG", "Prompt Engineering", 
+    "Whisper", "Git", "FastAPI", "Docker", "Linux", "PostgreSQL", 
+    "NVIDIA Omniverse", "Vector Databases"
   ];
 
   const softSkills = [
@@ -30,14 +32,14 @@ const About = () => {
           <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-2xl font-heading font-medium mb-4">Who I Am</h3>
             <p className="text-gray-700 mb-4">
-              A passionate and results-driven Data Scientist and AI Engineer with a strong foundation 
-              in machine learning, AI, and data analysis. Graduated with a Bachelor's degree in 
-              Computer Science and Artificial Intelligence from Nile University.
+              Fresh graduate AI Engineer with hands-on experience in LLMs, computer vision, and medical AI. 
+              Skilled in fine-tuning models (Mistral, LLaMA), CUDA optimization, and leading real-world projects. 
+              Published researcher with a strong foundation in deploying production-ready AI systems.
             </p>
             <p className="text-gray-700 mb-4">
-              Experienced in working with large language models (LLMs), computer vision, and natural 
-              language processing (NLP) techniques. Adept at leading technical teams, managing projects, 
-              and deploying AI solutions in production environments.
+              Currently serving as Co-Founder & CTO at Vionex Digital Solutions and Technical Lead at Retailo, 
+              driving AI initiatives across e-commerce, healthcare, and education sectors in Egypt, Africa, 
+              and the Middle East.
             </p>
             <p className="text-gray-700">
               Known for strong problem-solving ability, collaboration skills, and commitment to 
@@ -63,10 +65,16 @@ const About = () => {
                   <h3 className="text-2xl font-heading font-medium mb-4">Education</h3>
                   <div className="space-y-4">
                     <div>
+                      <h4 className="font-medium">Master of Data Science</h4>
+                      <p className="text-sm text-gray-600">Arab Academy for Science, Technology and Maritime Transport</p>
+                      <p className="text-sm text-gray-600">Oct 2025 – Sep 2028</p>
+                      <p className="text-sm text-gray-700 mt-2">Master's degree in Data Science to advance expertise in analytics and AI</p>
+                    </div>
+                    <div className="mt-4">
                       <h4 className="font-medium">Bachelor of Computer Science & Artificial Intelligence</h4>
                       <p className="text-sm text-gray-600">Nile University, Graduated: Jun 2025</p>
-                      <p className="text-sm text-gray-600">CGPA: 3.6</p>
-                      <p className="text-sm text-gray-700 mt-2">Relevant Coursework: Artificial Intelligence, Machine Learning, Databases, Software Development, Data Analysis, Mathematics</p>
+                      <p className="text-sm text-gray-600">CGPA: 3.6/4.0 | Full Merit Scholarship (2021-2025)</p>
+                      <p className="text-sm text-gray-700 mt-2">Coursework: Deep Learning, Machine Learning, Computer Vision, NLP, Reinforcement Learning, Databases</p>
                     </div>
                   </div>
                 </div>
