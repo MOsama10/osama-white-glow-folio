@@ -6,9 +6,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
   
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/mohamed-osama' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/mohamed-osama' },
-    { name: 'Twitter', url: 'https://twitter.com/mohamed_osama' }
+    { name: 'GitHub', url: 'https://github.com/MOsama10' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/-mohamedosama/' }
   ];
 
   return (
