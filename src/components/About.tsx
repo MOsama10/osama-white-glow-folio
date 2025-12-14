@@ -11,7 +11,7 @@ const About = () => {
   const advancedSkills = [
     "Hugging Face", "Transformers", "LoRA", "RAG", "Prompt Engineering", 
     "Whisper", "Git", "FastAPI", "Docker", "Linux", "PostgreSQL", 
-    "NVIDIA Omniverse", "Vector Databases"
+    "NVIDIA Omniverse", "Vector Databases", "CI/CD"
   ];
 
   return (
