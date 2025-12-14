@@ -1,114 +1,109 @@
-
 import React from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Briefcase, Github } from 'lucide-react';
+import { Briefcase, Github, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       title: 'XScene: Automated Radiology Report Generation',
-      description: 'Graduation project generating clinically accurate radiology reports from chest X-rays using scene graph-enhanced LLMs. Developed 3-stage AI pipeline: object detection (Deformable DETR), relationship extraction (EGTR), and report generation (Mistral-7B-Instruct). Built a web interface with visual scene graphs for radiologist workflow integration.',
-      image: '/placeholder.svg',
-      tags: ['Deformable DETR', 'EGTR', 'Mistral-7B', 'PyTorch', 'CUDA', 'FastAPI', 'LoRA'],
-      github: 'https://github.com/MOsama10/radiology-report-generation'
+      description: 'Generating clinically accurate radiology reports from chest X-rays using scene graph-enhanced LLMs. Built a 3-stage AI pipeline with object detection, relationship extraction, and report generation.',
+      tags: ['Deformable DETR', 'Mistral-7B', 'PyTorch', 'FastAPI'],
+      github: 'https://github.com/MOsama10/radiology-report-generation',
+      featured: true
     },
     {
       title: 'Katana NLP-to-SQL Platform',
-      description: 'Built fully offline NLP-to-SQL system for Katana telecom analytics, enabling natural language database queries. Implemented domain-aware logic and dynamic schema handling for complex telecom data structures, processing daily queries with sub-second response times.',
-      image: '/placeholder.svg',
+      description: 'Fully offline NLP-to-SQL system for telecom analytics, enabling natural language database queries with sub-second response times.',
       tags: ['FastAPI', 'PostgreSQL', 'SQLCoder', 'llama.cpp'],
       github: 'https://github.com/MOsama10/katana-nlp-to-sql'
     },
     {
       title: 'Enterprise RAG System',
-      description: 'Developed local Retrieval-Augmented Generation system for enterprise-grade question answering with schema-aware logic. Built scalable vector database indexing for documents with semantic search capabilities. Implemented context-aware response generation with source attribution and confidence scoring.',
-      image: '/placeholder.svg',
+      description: 'Local Retrieval-Augmented Generation system for enterprise-grade question answering with semantic search and confidence scoring.',
       tags: ['RAG', 'PyTorch', 'Hugging Face', 'FastAPI'],
       github: 'https://github.com/MOsama10/RAG_Project'
     },
     {
-      title: 'PRISMA-Based MARL Review Paper Companion',
-      description: 'Developed companion codebase for systematic review paper on Multi-Agent Reinforcement Learning (MARL) based on PRISMA guidelines. Includes data extraction, visual analysis, and reproducible insights for MARL literature trends. Created automated data extraction and visualization tools for research trend analysis.',
-      image: '/placeholder.svg',
-      tags: ['Python', 'Jupyter', 'SciPy', 'Matplotlib', 'Pandas', 'Zotero'],
-      github: 'https://github.com/MOsama10/prisma-marl-review'
-    },
-    {
-      title: 'Speech-to-Speech Translation System',
-      description: 'Built end-to-end speech-to-speech translation pipeline using Whisper for ASR and XTTS for TTS. Integrated with FastAPI for local deployment, enabling seamless voice translation across multiple languages. Achieved real-time processing with 2-second average latency for voice translation tasks.',
-      image: '/placeholder.svg',
-      tags: ['XTTS', 'PyTorch', 'Whisper', 'FastAPI', 'Hugging Face'],
+      title: 'Speech-to-Speech Translation',
+      description: 'End-to-end speech translation pipeline using Whisper for ASR and XTTS for TTS with real-time processing.',
+      tags: ['XTTS', 'Whisper', 'FastAPI', 'Hugging Face'],
       github: 'https://github.com/MOsama10/Speech-to-Speech'
     },
     {
-      title: 'Hieroglyphic Translation to English',
-      description: 'Designed CV-NLP pipeline that detects and translates ancient Egyptian hieroglyphics into English using transformer-based models. Combined computer vision for hieroglyph detection with transformer-based sequence-to-sequence translation.',
-      image: '/placeholder.svg',
-      tags: ['Python', 'Transformers', 'Vision Models', 'Hugging Face'],
+      title: 'Hieroglyphic Translation',
+      description: 'CV-NLP pipeline that detects and translates ancient Egyptian hieroglyphics into English using transformer-based models.',
+      tags: ['Transformers', 'Vision Models', 'Hugging Face'],
       github: 'https://github.com/MOsama10/Hieroglyphic-translation-to-English'
     },
     {
-      title: 'Production to Instruction & AgriCash Avatar',
-      description: 'Transformed raw production logs into human-readable instructions using large language models and prompt engineering for enhanced operational clarity. Built interactive avatar guiding users through AgriCash app using XTTS, CUDA, and advanced RAG.',
-      image: '/placeholder.svg',
-      tags: ['PyTorch', 'LLMs', 'CUDA', 'Advanced RAG', 'FastAPI', 'XTTS'],
+      title: 'AgriCash Avatar System',
+      description: 'Interactive avatar guiding users through the AgriCash app using XTTS, CUDA, and advanced RAG for production logs.',
+      tags: ['LLMs', 'CUDA', 'Advanced RAG', 'XTTS'],
       github: 'https://github.com/MOsama10/production-to-instruction'
     }
   ];
 
   return (
-    <section id="projects" className="bg-gray-50">
+    <section id="projects" className="bg-muted/30">
       <div className="section-container">
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center mb-4">
           <Briefcase className="h-7 w-7 mr-3 text-primary" />
-          <h2 className="section-title">My Projects</h2>
+          <h2 className="section-title mb-0">Featured Projects</h2>
         </div>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          A selection of my recent AI and Data Science work
+        </p>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="overflow-hidden card-shadow animate-slide-up"
-              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+              className={`card-shadow hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group ${
+                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
+              }`}
             >
-              <div className="h-32 overflow-hidden bg-primary/5">
-                <div className="flex items-center justify-center h-full">
-                  <h3 className="text-2xl font-bold text-primary/30">{project.title.split(' ')[0]}</h3>
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between">
+                  <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  {project.featured && (
+                    <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium">
+                      Featured
+                    </span>
+                  )}
                 </div>
-              </div>
-              
-              <CardHeader>
-                <CardTitle className="text-lg">{project.title}</CardTitle>
               </CardHeader>
               
-              <CardContent>
-                <p className="text-gray-700 text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-1 mb-4">
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i}
-                      className="px-2 py-1 bg-primary/10 text-primary rounded-md text-xs font-medium"
+                      className="px-2 py-1 bg-muted text-muted-foreground rounded-md text-xs font-medium"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-              </CardContent>
-              
-              <CardFooter>
-                <Button variant="outline" size="sm" className="w-full" asChild>
+                
+                <Button variant="outline" size="sm" className="w-full group/btn" asChild>
                   <a 
                     href={project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center"
                   >
                     <Github className="h-4 w-4 mr-2" />
                     View on GitHub
+                    <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                   </a>
                 </Button>
-              </CardFooter>
+              </CardContent>
             </Card>
           ))}
         </div>
