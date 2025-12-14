@@ -5,22 +5,16 @@ import { Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Mohamed demonstrated exceptional skills in AI and Machine Learning during our collaboration. His dedication to understanding complex concepts and applying them to real-world problems is remarkable. His work on LLM solutions showed technical depth and practical application skills.",
-      name: "Dr. Ghada Khoriba",
-      title: "Associate Professor, Nile University",
-      initials: "GK"
+      quote: "I worked closely with Mohamed on AI project where he effectively deployed and compared multiple LLMs, offering clear insights into each. He also optimized AI service response times, even under limited hardware, showing strong technical skill and problem-solving ability.",
+      name: "Hani Ali, PMP®, MBA",
+      title: "Director of Software Engineering",
+      initials: "HA"
     },
     {
-      quote: "Working with Mohamed on AI projects was a great experience. He has a strong grasp of NLP and computer vision concepts, and his ability to deliver production-ready solutions under tight deadlines is impressive. A dedicated professional who always goes the extra mile.",
-      name: "Team Lead",
-      title: "Singularity AI Team",
-      initials: "ST"
-    },
-    {
-      quote: "Mohamed's teaching abilities are outstanding. He has a unique talent for breaking down complex AI concepts into understandable lessons. His students consistently show improvement and develop a genuine interest in the field.",
-      name: "NTI Supervisor",
-      title: "National Telecommunications Institute",
-      initials: "NS"
+      quote: "Strongly recommend Mohamed for his exceptional expertise in Robotics and Artificial Intelligence. His knack for developing impactful ML models, coupled with a collaborative spirit and a passion for innovation, consistently elevates project outcomes. A true asset to any team.",
+      name: "Amr Shaarawy",
+      title: "Data Scientist @ Palm | Researcher | Youngest Certified AI Professional in History",
+      initials: "AS"
     }
   ];
 
@@ -34,7 +28,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
