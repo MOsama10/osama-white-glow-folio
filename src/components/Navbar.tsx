@@ -1,27 +1,39 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      
+      // Update active section based on scroll position
+      const sections = ['hero', 'about', 'expertise', 'projects', 'resume', 'certifications', 'testimonials', 'contact'];
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
+    { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Resume', href: '#resume' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -30,67 +42,64 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
         isScrolled 
-          ? 'bg-white shadow-md py-2' 
+          ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border py-3' 
           : 'bg-transparent py-4'
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="font-heading text-xl font-bold">
-          <span className="text-primary">Mohamed</span> Osama
+        <a href="#hero" className="font-heading text-xl font-bold flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+            <span className="text-primary-foreground font-bold text-sm">MO</span>
+          </div>
+          <span className="hidden sm:inline">Mohamed</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-1">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
+        <div className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => {
+            const sectionId = item.href.replace('#', '');
+            const isActive = activeSection === sectionId || 
+              (sectionId === 'hero' && activeSection === 'hero');
+            
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  'px-4 py-2 rounded-lg font-medium text-sm transition-colors',
+                  isActive 
+                    ? 'bg-primary/10 text-primary' 
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                )}
+              >
+                {item.name}
+              </a>
+            );
+          })}
         </div>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 focus:outline-none" 
+          className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          <svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            {mobileMenuOpen ? (
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M6 18L18 6M6 6l12 12" 
-              />
-            ) : (
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M4 6h16M4 12h16M4 18h16" 
-              />
-            )}
-          </svg>
+          {mobileMenuOpen ? (
+            <X className="w-5 h-5" />
+          ) : (
+            <Menu className="w-5 h-5" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-background border-t border-border shadow-lg">
           <div className="flex flex-col py-2">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="px-6 py-3 font-medium text-gray-700 hover:bg-gray-50"
+                className="px-6 py-3 font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

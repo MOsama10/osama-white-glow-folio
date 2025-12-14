@@ -1,10 +1,9 @@
-
 import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Send, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 
@@ -32,7 +31,6 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Replace these with your actual EmailJS service ID, template ID, and public key
       const serviceId = 'service_djyyccm';
       const templateId = 'template_z8aa2rq';
       const publicKey = 'UlTinkLdkXKch8URV';
@@ -70,62 +68,69 @@ const Contact = () => {
     }
   };
 
+  const contactInfo = [
+    { icon: Mail, label: 'Email', value: 'm.osaammaa@gmail.com', href: 'mailto:m.osaammaa@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+20 1098408989', href: 'tel:+201098408989' },
+    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/-mohamedosama', href: 'https://www.linkedin.com/in/-mohamedosama/' },
+    { icon: Github, label: 'GitHub', value: 'github.com/MOsama10', href: 'https://github.com/MOsama10' },
+  ];
+
   return (
-    <section id="contact" className="bg-gray-50">
+    <section id="contact" className="bg-muted/30">
       <div className="section-container">
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center mb-4">
           <Mail className="h-7 w-7 mr-3 text-primary" />
-          <h2 className="section-title">Contact Me</h2>
+          <h2 className="section-title mb-0">Get In Touch</h2>
         </div>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Have a question or want to work together? Feel free to reach out!
+        </p>
 
-        <div className="max-w-3xl mx-auto animate-slide-up">
-          <Card className="card-shadow mb-8">
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <a href="mailto:m.osaammaa@gmail.com" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-                  <Mail className="h-5 w-5 mr-3 text-primary" />
-                  <div>
-                    <p className="text-sm font-medium">Email</p>
-                    <p className="text-gray-700">m.osaammaa@gmail.com</p>
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <Card className="card-shadow">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-heading font-semibold mb-6">Contact Information</h3>
+                <div className="space-y-4">
+                  {contactInfo.map((info, index) => (
+                    <a 
+                      key={index}
+                      href={info.href}
+                      target={info.href.startsWith('http') ? '_blank' : undefined}
+                      rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="flex items-center gap-4 p-3 rounded-lg hover:bg-muted transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <info.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">{info.label}</p>
+                        <p className="text-sm font-medium">{info.value}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                
+                <div className="mt-6 pt-6 border-t border-border">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-primary" />
+                    <div>
+                      <p className="text-xs text-muted-foreground">Location</p>
+                      <p className="text-sm font-medium">Giza, Egypt</p>
+                    </div>
                   </div>
-                </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-                <a href="tel:+201098408989" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-                  <Phone className="h-5 w-5 mr-3 text-primary" />
-                  <div>
-                    <p className="text-sm font-medium">Phone</p>
-                    <p className="text-gray-700">+20 1098408989</p>
-                  </div>
-                </a>
-
-                <a href="https://linkedin.com/in/-mohamedosama" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-                  <Linkedin className="h-5 w-5 mr-3 text-primary" />
-                  <div>
-                    <p className="text-sm font-medium">LinkedIn</p>
-                    <p className="text-gray-700">linkedin.com/in/-mohamedosama</p>
-                  </div>
-                </a>
-
-                <a href="https://github.com/MOsama10" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-                  <Github className="h-5 w-5 mr-3 text-primary" />
-                  <div>
-                    <p className="text-sm font-medium">GitHub</p>
-                    <p className="text-gray-700">github.com/MOsama10</p>
-                  </div>
-                </a>
-              </div>
-            </CardContent>
-          </Card>
-
+          {/* Contact Form */}
           <Card className="card-shadow">
             <CardContent className="p-6">
-              <p className="text-center text-gray-700 mb-8">
-                Have a question or want to work together? Fill out the form below and 
-                I'll get back to you as soon as possible.
-              </p>
-
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <h3 className="text-lg font-heading font-semibold mb-6">Send a Message</h3>
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">Name</label>
                     <Input
@@ -137,7 +142,6 @@ const Contact = () => {
                       required
                     />
                   </div>
-
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium">Email</label>
                     <Input
@@ -146,7 +150,7 @@ const Contact = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Your email address"
+                      placeholder="Your email"
                       required
                     />
                   </div>
@@ -159,7 +163,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Subject of your message"
+                    placeholder="Subject"
                     required
                   />
                 </div>
@@ -171,22 +175,27 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Your message"
-                    rows={6}
+                    placeholder="Your message..."
+                    rows={5}
                     required
                   />
                 </div>
 
-                <div className="flex justify-center">
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    disabled={isSubmitting}
-                    className="px-8"
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </div>
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  disabled={isSubmitting}
+                  className="w-full"
+                >
+                  {isSubmitting ? (
+                    'Sending...'
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
               </form>
             </CardContent>
           </Card>
