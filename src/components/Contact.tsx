@@ -130,7 +130,7 @@ const Contact = () => {
             <CardContent className="p-6">
               <h3 className="text-lg font-heading font-semibold mb-6">Send a Message</h3>
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">Name</label>
                     <Input

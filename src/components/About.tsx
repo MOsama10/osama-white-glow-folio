@@ -39,24 +39,24 @@ const About = () => {
             </p>
             
             {/* Contact Info Cards */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
               <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border/50">
-                <Mail className="h-4 w-4 text-primary" />
-                <div>
+                <Mail className="h-4 w-4 text-primary shrink-0" />
+                <div className="min-w-0">
                   <p className="text-xs text-muted-foreground">Email</p>
-                  <p className="text-sm font-medium">m.osaammaa@gmail.com</p>
+                  <p className="text-sm font-medium truncate">m.osaammaa@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border/50">
-                <Phone className="h-4 w-4 text-primary" />
-                <div>
+                <Phone className="h-4 w-4 text-primary shrink-0" />
+                <div className="min-w-0">
                   <p className="text-xs text-muted-foreground">Phone</p>
                   <p className="text-sm font-medium">+20 1098408989</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border/50 col-span-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <div>
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border/50 sm:col-span-2">
+                <MapPin className="h-4 w-4 text-primary shrink-0" />
+                <div className="min-w-0">
                   <p className="text-xs text-muted-foreground">Location</p>
                   <p className="text-sm font-medium">Giza, Egypt</p>
                 </div>

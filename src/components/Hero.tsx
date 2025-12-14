@@ -77,7 +77,7 @@ const Hero = () => {
           <div className="lg:w-1/2 flex justify-center animate-fade-in relative" style={{ animationDelay: '0.4s' }}>
             <div className="relative">
               {/* Main image container */}
-              <div className="w-72 h-72 md:w-96 md:h-96 relative">
+              <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-primary/10 rounded-full blur-3xl"></div>
                 <div className="absolute inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-full"></div>
                 <img 
@@ -88,27 +88,27 @@ const Hero = () => {
               </div>
               
               {/* Floating Badge - Top Left */}
-              <div className="absolute -left-4 top-8 md:left-0 md:top-12 bg-card border border-border rounded-xl p-3 shadow-lg animate-float z-20">
+              <div className="absolute -left-2 top-4 sm:-left-4 sm:top-8 md:left-0 md:top-12 bg-card border border-border rounded-xl p-2 sm:p-3 shadow-lg animate-float z-20">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Brain className="h-4 w-4 text-primary" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Brain className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold">AI Solutions</p>
-                    <p className="text-[10px] text-muted-foreground">Certified Expert</p>
+                    <p className="text-[10px] sm:text-xs font-semibold">AI Solutions</p>
+                    <p className="text-[8px] sm:text-[10px] text-muted-foreground">Certified Expert</p>
                   </div>
                 </div>
               </div>
               
               {/* Floating Badge - Bottom Right */}
-              <div className="absolute -right-4 bottom-16 md:right-0 md:bottom-20 bg-card border border-border rounded-xl p-3 shadow-lg animate-float-delayed z-20">
+              <div className="absolute -right-2 bottom-12 sm:-right-4 sm:bottom-16 md:right-0 md:bottom-20 bg-card border border-border rounded-xl p-2 sm:p-3 shadow-lg animate-float-delayed z-20">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <BarChart3 className="h-4 w-4 text-primary" />
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <BarChart3 className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold">Data Driven</p>
-                    <p className="text-[10px] text-muted-foreground">Detailed Analysis</p>
+                    <p className="text-[10px] sm:text-xs font-semibold">Data Driven</p>
+                    <p className="text-[8px] sm:text-[10px] text-muted-foreground">Detailed Analysis</p>
                   </div>
                 </div>
               </div>
